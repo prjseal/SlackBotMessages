@@ -1,6 +1,9 @@
 ![SlackBotMessages Logo](https://github.com/prjseal/SlackBotMessages/blob/master/sbm_logo.png "SlackBotMessages Logo")
 
 # SlackBotMessages
+
+[![Nuget Downloads](https://img.shields.io/nuget/dt/SlackBotMessages.svg)](https://www.nuget.org/packages/SlackBotMessages)
+
 A .NET library to enable you to send bot messages in slack, by posting messages to Slack's incoming WebHook Urls
 
 ## NuGet
