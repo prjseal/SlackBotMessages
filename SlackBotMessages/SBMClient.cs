@@ -47,9 +47,12 @@ namespace SlackBotMessages
                 postData.Append(",\"channel\":\"" + message.Channel + "\"");
             }
 
-            if (!String.IsNullOrEmpty(message.Icon_Emoji))
+            if (!String.IsNullOrEmpty(message.Icon))
             {
-                postData.Append(",\"icon_emoji\":\"" + message.Icon_Emoji + "\"");
+                if(message.Icon.StartsWith(":"))
+                    postData.Append(",\"icon_emoji\":\"" + message.Icon + "\"");
+                else
+                    postData.Append(",\"icon_url\":\"" + message.Icon + "\"");
             }
 
             if (!String.IsNullOrEmpty(message.UserName))
@@ -71,7 +74,7 @@ namespace SlackBotMessages
         {
             WebRequest request = WebRequest.Create(webhookUrl);
             request.Method = "POST";
-            byte[] byteArray = Encoding.UTF8.GetBytes(sbPostData.ToString());
+            byte[] byteArray = Encoding.UTF8.GetBytes(sbPostData);
             request.ContentType = "application/x-www-form-urlencoded";
             request.ContentLength = byteArray.Length;
             Stream dataStream = request.GetRequestStream();
