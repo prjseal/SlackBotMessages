@@ -1,9 +1,4 @@
-﻿using System;
-using System.Net;
-using System.Text;
-using System.IO;
-
-namespace SlackBotMessages
+﻿namespace SlackBotMessages
 {
     /// <summary>
     /// A message with the structure required by slack

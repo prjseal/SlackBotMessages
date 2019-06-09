@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>SlackBotMessages</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Paul Seal</authors>
     <owners>Paul Seal</owners>
     <licenseUrl>https://github.com/prjseal/SlackBotMessages/blob/master/License.md</licenseUrl>
@@ -11,7 +11,10 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple library for sending Slack Bot Messages</description>
     <releaseNotes>First release</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <copyright>Copyright 2019</copyright>
     <tags>Slack,Bot,Messages,Messaging,WebRequest,WebHook</tags>
   </metadata>
+  <files>
+    <file src="readme.txt" target="" />
+  </files>
 </package>
