@@ -7,7 +7,7 @@
     <owners>Paul Seal</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/prjseal/SlackBotMessages/</projectUrl>
-    <iconUrl>https://github.com/prjseal/SlackBotMessages/master/sbm_logo.png</iconUrl>
+    <iconUrl>https://github.com/prjseal/SlackBotMessages/blob/master/sbmlogo.jpg?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A simple library for sending Slack Bot Messages</description>
     <releaseNotes>Added instructions to install readme</releaseNotes>
