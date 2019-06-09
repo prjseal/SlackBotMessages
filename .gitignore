@@ -2,3 +2,7 @@
 /SlackBotMessages/bin/Release
 /SlackBotMessages/obj
 /.vs
+/packages
+/SlackBotMessages.Tests/bin/Debug
+/SlackBotMessages.Tests/obj/Debug
+/*.nupkg

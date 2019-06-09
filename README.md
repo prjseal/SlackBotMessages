@@ -32,3 +32,5 @@ Message msg = new Message("Hello World", "general", "codeshare.co.uk",":poop:");
 client.Send(msg);
 
 ```
+
+You can try it out in the test project.
