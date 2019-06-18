@@ -6,3 +6,5 @@
 /SlackBotMessages.Tests/bin/Debug
 /SlackBotMessages.Tests/obj/Debug
 /*.nupkg
+/.idea
+/SlackBotMessages.Tests/obj
