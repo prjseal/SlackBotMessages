@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using NUnit.Framework;
+using SlackBotMessages.Enums;
 using SlackBotMessages.Models;
 
 namespace SlackBotMessages.Tests
@@ -158,15 +159,17 @@ namespace SlackBotMessages.Tests
         public void Footer_Example()
         {
             var client = new SbmClient(WebHookUrl);
-            var message = new Message(username: "Pingdom", iconUrl: "https://a.slack-edge.com/7f1a0/plugins/pingdom/assets/service_36.png")
+            var message = new Message("Here is the message")
+                .SetChannel("general")
+                .SetUser("SlackBotMessages", iconUrl: "https://codeshare.co.uk/media/1505/sbmlogo.jpg")
                 .AddAttachment(
-                    new Attachment("good", "codeshare.co.uk is up")
-                        .AddField("Website is up (Incident #123456)",
-                            "<https://codeshare.co.uk|https://codeshare.co.uk> • <https://my.pingdom.com/reports/responsetime#check=123456|View details>",
-                            false)
-                        .WithFooter("Paul Seal",
-                            "https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2019-06-18/656803539986_48.png",
-                            DateTime.UtcNow)
+                    new Attachment("codeshare.co.uk is up")
+                        .SetPretext("This is text which shows before the attachment")
+                        .SetColor("#ff00ff")
+                        .SetAuthor("Paul Seal", "https://codeshare.co.uk", "https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2019-06-18/656803539986_48.png")
+                        .SetImage("https://codeshare.co.uk/media/1033/10-golden-rules-for-becoming-a-better-programmer.jpg")
+                        .AddField(Emoji.Tada + " Website is up (Incident #123456)", "<https://codeshare.co.uk|https://codeshare.co.uk> • <https://my.pingdom.com/reports/responsetime#check=123456|View details>", false)
+                        .SetFooter("Paul Seal","https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2019-06-18/656803539986_48.png", DateTime.UtcNow)
             );
             var response = client.Send(message);
             Assert.AreEqual("ok", response.Result);

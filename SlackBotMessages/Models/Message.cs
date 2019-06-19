@@ -9,39 +9,13 @@ namespace SlackBotMessages.Models
         {
         }
 
-        public Message(string channel)
+        /// <summary>
+        /// Create a new message object and set the main text
+        /// </summary>
+        /// <param name="text">The main text to show in the message</param>
+        public Message(string text)
         {
-            this.Channel = channel;
-        }
-
-        public Message(string channel, string username)
-        {
-            this.Channel = channel;
-            this.Username = username;
-        }
-
-        public Message(string channel, string username, string iconEmoji)
-        {
-            this.Channel = channel;
-            this.Username = username;
-            this.IconEmoji = iconEmoji;
-        }
-
-        public Message(string channel, string username, string iconEmoji, string iconUrl)
-        {
-            this.Channel = channel;
-            this.Username = username;
-            this.IconEmoji = iconEmoji;
-            this.IconUrl = IconUrl;
-        }
-
-        public Message(string channel = null, string username = null, string iconEmoji = null, string iconUrl = null, string text = null)
-        {
-            this.Channel = channel;
-            this.Username = username;
-            this.IconEmoji = iconEmoji;
-            this.IconUrl = IconUrl;
-            this.Text = text;
+            Text = text;
         }
 
         /// <summary>
@@ -97,12 +71,27 @@ namespace SlackBotMessages.Models
 
         public Message AddAttachment(Attachment attachment)
         {
-            if (this.Attachments == null)
+            if (Attachments == null)
             {
-                this.Attachments = new List<Attachment>();
+                Attachments = new List<Attachment>();
             }
             
-            this.Attachments.Add(attachment);
+            Attachments.Add(attachment);
+            return this;
+        }
+        
+        public Message SetUser(string username, string iconEmoji = null, string iconUrl = null)
+        {
+            Username = username;
+            IconEmoji = iconEmoji;
+            IconUrl = iconUrl;
+            return this;
+        }
+        
+        
+        public Message SetChannel(string channel)
+        {
+            Channel = channel;
             return this;
         }
     }

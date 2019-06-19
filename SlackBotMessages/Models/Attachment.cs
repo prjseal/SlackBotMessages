@@ -1,34 +1,39 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using SlackBotMessages.Enums;
 
 namespace SlackBotMessages.Models
 {
+    /// <summary>
+    /// Send rich messages using attachments
+    /// </summary>
     public class Attachment
     {
-        /// <summary>
-        /// Default empty constructor
-        /// </summary>
         public Attachment()
         {
         }
 
-        public Attachment(string color)
+        /// <summary>
+        /// Create an attachment and define the fallback text
+        /// </summary>
+        /// <param name="fallbackText">Text to be shown by Slack clients
+        /// which understand attachments but choose not to show them.</param>
+        public Attachment(string fallbackText)
         {
-            this.Color = color;
+            Fallback = fallbackText;
         }
 
-        public Attachment(string color, string fallbackText)
+        /// <summary>
+        /// Create an attachment and define the fallback text and pretext
+        /// </summary>
+        /// <param name="fallbackText">Text to be shown by Slack clients
+        /// which understand attachments but choose not to show them.</param>
+        /// <param name="pretext">Text to be shown just above an attachment</param>
+        public Attachment(string fallbackText, string pretext)
         {
-            this.Color = color;
-            this.Fallback = fallbackText;
-        }
-
-        public Attachment(string color, string fallbackText, string pretext)
-        {
-            this.Color = color;
-            this.Fallback = fallbackText;
-            this.Pretext = pretext;
+            Fallback = fallbackText;
+            Pretext = pretext;
         }
 
         /// <summary>
@@ -150,30 +155,126 @@ namespace SlackBotMessages.Models
         [JsonProperty("ts")]
         public int FooterTimeStamp { get; set; }
         
-        public Attachment WithFooter(string footerText, string footerIcon, DateTime footerTimeStamp)
+        /// <summary>
+        /// Set the properties needed to show a footer
+        /// </summary>
+        /// <param name="footerText">The text to show in the footer</param>
+        /// <param name="footerIcon">The small icon to show in the footer</param>
+        /// <param name="footerTimeStamp">A DateTime object representing the timestamp</param>
+        /// <returns>The updated attachment</returns>
+        public Attachment SetFooter(string footerText, string footerIcon, DateTime footerTimeStamp)
         {
-            this.Footer = footerText;
-            this.FooterIcon = footerIcon;
+            Footer = footerText;
+            FooterIcon = footerIcon;
  
             var epochTime = (footerTimeStamp - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
-            this.FooterTimeStamp = (int)epochTime; 
+            FooterTimeStamp = (int)epochTime; 
             return this;
         }
 
+        /// <summary>
+        /// Add a field to the Attachment
+        /// </summary>
+        /// <param name="title">The title which will show in bold</param>
+        /// <param name="value">The value to display under the title</param>
+        /// <param name="_short">A bool to say if the field value is short so
+        /// the field can be displayed side by side with other short fields</param>
+        /// <returns>The updated attachment</returns>
         public Attachment AddField(string title, string value, bool _short)
         {
-            if (this.Fields == null)
+            if (Fields == null)
             {
-                this.Fields = new List<Field>();
+                Fields = new List<Field>();
             }
             
-            this.Fields.Add(new Field()
+            Fields.Add(new Field()
             {
                 Title = title,
                 Value = value,
                 Short = _short
             });
             
+            return this;
+        }
+
+        /// <summary>
+        /// Add Author details to the Attachment
+        /// </summary>
+        /// <param name="authorName">Name of the Author</param>
+        /// <param name="authorLink">Link for the Author, this will
+        /// make the name an hyperlink</param>
+        /// <param name="authorIcon">Icon for the Author</param>
+        /// <returns>The updated attachment</returns>
+        public Attachment SetAuthor(string authorName, string authorLink = null, string authorIcon = null)
+        {
+            AuthorName = authorName;
+            AuthorLink = authorLink;
+            AuthorIcon = authorIcon;
+            return this;
+        }
+
+        /// <summary>
+        /// Set the pretext for the attachment
+        /// </summary>
+        /// <param name="pretext">The text which shows just above the attachment</param>
+        /// <returns>The updated attachment</returns>
+        public Attachment SetPretext(string pretext)
+        {
+            Pretext = pretext;
+            return this;
+        }
+
+        /// <summary>
+        /// Set the image to display in the Attachment
+        /// </summary>
+        /// <param name="imageUrl">The url of the image to display</param>
+        /// <returns>The updated attachment</returns>
+        public Attachment SetImage(string imageUrl)
+        {
+            ImageUrl = imageUrl;
+            return this;
+        }
+        
+        /// <summary>
+        /// Set the thumb url to show in the attachment
+        /// </summary>
+        /// <param name="thumbUrl">The url of a small image which will be cropped
+        /// to a 75x75 square</param>
+        /// <returns>The updated attachment</returns>
+        public Attachment SetThumbUrl(string thumbUrl)
+        {
+            ThumbUrl = thumbUrl;
+            return this;
+        }
+
+        /// <summary>
+        /// Set the color of the attachment, using an enum of colors
+        /// </summary>
+        /// <param name="color">An enum for the predefined colors</param>
+        /// <returns>The updated attachment</returns>
+        public Attachment SetColor(Color color)
+        {
+            switch (color)
+            {
+                case Enums.Color.Red:
+                    Color = "danger";
+                    break;
+                case Enums.Color.Orange:
+                    Color = "warning";
+                    break;
+                case Enums.Color.Green:
+                    Color = "good";
+                    break;
+                default:
+                    Color = null;
+                    break;
+            }
+            return this;
+        }
+
+        public Attachment SetColor(string colorHexCode)
+        {
+            Color = colorHexCode;
             return this;
         }
         

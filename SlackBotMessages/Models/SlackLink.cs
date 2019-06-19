@@ -13,7 +13,7 @@ namespace SlackBotMessages.Models
 
         public override string ToString()
         {
-            string linkText = !string.IsNullOrWhiteSpace(Text) ? Text : Url;
+            var linkText = !string.IsNullOrWhiteSpace(Text) ? Text : Url;
             return $"<{Url}|{linkText}>";
         }
     }
