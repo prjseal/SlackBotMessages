@@ -65,7 +65,7 @@ namespace SlackBotMessages.Tests
                 Text = "You are using Slack Bot Messages by Paul Seal from codeshare.co.uk",
                 Channel = "general",
                 Username = "SlackBotMessages",
-                IconUrl = "https://codeshare.co.uk/media/1505/images/sbmlogo.jpg",
+                IconUrl = "https://codeshare.co.uk/media/1505/sbmlogo.jpg",
                 Attachments = new List<Attachment>
                 {
                     new Attachment
@@ -249,7 +249,7 @@ namespace SlackBotMessages.Tests
 
             var message = new Message()
                 .SetChannel("general")
-                .SetUserWithIconUrl("SlackBotMessages", "https://codeshare.co.uk/media/1505/images/sbmlogo.jpg")
+                .SetUserWithIconUrl("SlackBotMessages", "https://codeshare.co.uk/media/1505/sbmlogo.jpg")
                 .AddAttachment(
                     new Attachment("Lorem ipsum dolor sit amet ...")
                         .SetColor("#ff00ff")
@@ -274,7 +274,7 @@ namespace SlackBotMessages.Tests
 
             var message = new Message()
                 .SetChannel("general")
-                .SetUserWithIconUrl("SlackBotMessages", "https://codeshare.co.uk/media/1505/images/sbmlogo.jpg")
+                .SetUserWithIconUrl("SlackBotMessages", "https://codeshare.co.uk/media/1505/sbmlogo.jpg")
                 .AddAttachment(
                     new Attachment("Lorem ipsum dolor sit amet ...")
                         .SetColor("#0000ff")
@@ -298,7 +298,7 @@ namespace SlackBotMessages.Tests
             var client = new SbmClient(WebHookUrl);
 
             var message = new Message("https://dev.to/")
-                .SetUserWithIconUrl("Slack Bot Messages", "https://codeshare.co.uk/media/1505/images/sbmlogo.jpg")
+                .SetUserWithIconUrl("Slack Bot Messages", "https://codeshare.co.uk/media/1505/sbmlogo.jpg")
                 .AddAttachment(
                     new Attachment("Sorting the tools")
                         .SetAuthor("dev.to",
