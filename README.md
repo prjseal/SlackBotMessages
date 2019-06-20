@@ -1,4 +1,4 @@
-![SlackBotMessages Logo](https://github.com/prjseal/SlackBotMessages/blob/master/sbm_logo.png "SlackBotMessages Logo")
+![SlackBotMessages Logo](https://github.com/prjseal/SlackBotMessages/blob/master/sbmlogo.jpg "SlackBotMessages Logo")
 
 # SlackBotMessages
 
