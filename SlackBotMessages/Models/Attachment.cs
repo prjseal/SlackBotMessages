@@ -10,6 +10,9 @@ namespace SlackBotMessages.Models
     /// </summary>
     public class Attachment
     {
+        /// <summary>
+        /// Create an attachment
+        /// </summary>
         public Attachment()
         {
         }
@@ -154,7 +157,7 @@ namespace SlackBotMessages.Models
         /// </summary>
         [JsonProperty("ts")]
         public int FooterTimeStamp { get; set; }
-        
+
         /// <summary>
         /// Set the properties needed to show a footer
         /// </summary>
@@ -166,9 +169,9 @@ namespace SlackBotMessages.Models
         {
             Footer = footerText;
             FooterIcon = footerIcon;
- 
+
             var epochTime = (footerTimeStamp - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalSeconds;
-            FooterTimeStamp = (int)epochTime; 
+            FooterTimeStamp = (int) epochTime;
             return this;
         }
 
@@ -186,14 +189,14 @@ namespace SlackBotMessages.Models
             {
                 Fields = new List<Field>();
             }
-            
+
             Fields.Add(new Field()
             {
                 Title = title,
                 Value = value,
                 Short = _short
             });
-            
+
             return this;
         }
 
@@ -234,7 +237,7 @@ namespace SlackBotMessages.Models
             ImageUrl = imageUrl;
             return this;
         }
-        
+
         /// <summary>
         /// Set the thumb url to show in the attachment
         /// </summary>
@@ -269,16 +272,19 @@ namespace SlackBotMessages.Models
                     Color = null;
                     break;
             }
+
             return this;
         }
 
+        /// <summary>
+        /// Set the color of the attachment, using a css hex code
+        /// </summary>
+        /// <param name="colorHexCode">The CSS hex code color</param>
+        /// <returns>The updated attachment</returns>
         public Attachment SetColor(string colorHexCode)
         {
             Color = colorHexCode;
             return this;
         }
-        
     }
-    
-    
 }

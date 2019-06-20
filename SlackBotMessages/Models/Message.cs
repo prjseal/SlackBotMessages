@@ -5,6 +5,9 @@ namespace SlackBotMessages.Models
 {
     public class Message
     {
+        /// <summary>
+        /// Create a message
+        /// </summary>
         public Message()
         {
         }
@@ -69,6 +72,11 @@ namespace SlackBotMessages.Models
         [JsonProperty("attachments")]
         public List<Attachment> Attachments { get; set; }
 
+        /// <summary>
+        /// Add an attachment to the message
+        /// </summary>
+        /// <param name="attachment">The attachment to add</param>
+        /// <returns>The updated message</returns>
         public Message AddAttachment(Attachment attachment)
         {
             if (Attachments == null)
@@ -80,6 +88,39 @@ namespace SlackBotMessages.Models
             return this;
         }
         
+        /// <summary>
+        /// Set the username and emoji for the message
+        /// </summary>
+        /// <param name="username">The username to display</param>
+        /// <param name="iconEmoji">The emoji icon to display with the username</param>
+        /// <returns>The updated message</returns>
+        public Message SetUserWithEmoji(string username, string iconEmoji)
+        {
+            Username = username;
+            IconEmoji = iconEmoji;
+            return this;
+        }
+        
+        /// <summary>
+        /// Set the username and icon url for the message
+        /// </summary>
+        /// <param name="username">The username to display</param>
+        /// <param name="iconUrl">The url of an icon to display next to the username</param>
+        /// <returns>The updated message</returns>
+        public Message SetUserWithIconUrl(string username, string iconUrl)
+        {
+            Username = username;
+            IconUrl = iconUrl;
+            return this;
+        }
+        
+        /// <summary>
+        /// Set the user details for the message
+        /// </summary>
+        /// <param name="username">The username to display</param>
+        /// <param name="iconEmoji">The emoji icon to display with the username</param>
+        /// <param name="iconUrl">The url of an icon to display next to the username</param>
+        /// <returns>The updated message</returns>
         public Message SetUser(string username, string iconEmoji = null, string iconUrl = null)
         {
             Username = username;
@@ -88,7 +129,11 @@ namespace SlackBotMessages.Models
             return this;
         }
         
-        
+        /// <summary>
+        /// Sets the channel to display this message in
+        /// </summary>
+        /// <param name="channel">The channel to display this message in</param>
+        /// <returns>The updated message</returns>
         public Message SetChannel(string channel)
         {
             Channel = channel;

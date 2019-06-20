@@ -1,6 +1,6 @@
 namespace SlackBotMessages
 {
-    public class Emoji
+    public static class Emoji
     {
         public const string A = ":a:";
         public const string Ab = ":ab:";

@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace SlackBotMessages.Models
 {
+    /// <summary>
+    /// Add fields to attachments
+    /// </summary>
     public class Field
     {
         /// <summary>

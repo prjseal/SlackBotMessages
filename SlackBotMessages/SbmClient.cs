@@ -9,8 +9,20 @@ namespace SlackBotMessages
 {
     public class SbmClient
     {
+        /// <summary>
+        /// The web hook url to send the message to
+        /// </summary>
         private string WebHookUrl { get; set; }
 
+        /// <summary>
+        /// The http client used for posting the data to the slack web hook.
+        /// </summary>
+        private static readonly HttpClient Client = new HttpClient();
+        
+        /// <summary>
+        /// Create the Slack Bot Messages client and set the web hook url.
+        /// </summary>
+        /// <param name="webHookUrl"></param>
         public SbmClient(string webHookUrl)
         {
             WebHookUrl = webHookUrl;
@@ -27,9 +39,13 @@ namespace SlackBotMessages
             return ProcessRequest(WebHookUrl, requestBody);
         }
 
-        static readonly HttpClient Client = new HttpClient();
- 
-        private async Task<string> ProcessRequest(string webHookUrl, string requestBody)
+        /// <summary>
+        /// The method used to send the message data to the slack web hook
+        /// </summary>
+        /// <param name="webHookUrl">The web hook url to send the message to</param>
+        /// <param name="requestBody">The message model in json format</param>
+        /// <returns></returns>
+        private static async Task<string> ProcessRequest(string webHookUrl, string requestBody)
         {
             try
             {
