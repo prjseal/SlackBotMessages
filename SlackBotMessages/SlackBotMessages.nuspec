@@ -7,20 +7,20 @@
     <owners>Paul Seal</owners>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/prjseal/SlackBotMessages/</projectUrl>
-    <iconUrl>https://github.com/prjseal/SlackBotMessages/blob/master/images/sbmlogo.jpg?raw=true</iconUrl>
+    <iconUrl>https://github.com/prjseal/SlackBotMessages/blob/master/sbmlogo.jpg?raw=true</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A library for sending rich formatted Slack Bot Messages. Works with .NET Core, .NET Standard and .NET Framework.</description>
     <releaseNotes>
-		- Send richly formatted messages with attachments
-		- Works with .NET Core, .NET Standard and .NET Framework
-	</releaseNotes>
+      - Send richly formatted messages with attachments
+      - Works with .NET Core, .NET Standard and .NET Framework
+    </releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>Slack,Bot,Messages,Messaging,WebRequest,WebHook,Attachments,SlackBot,SlackMessages</tags>
-	<dependencies>
+    <dependencies>
       <group targetFramework=".NETFramework4.5.1" />
       <group targetFramework=".NETStandard1.2">
-		<dependency id="System.Runtime.Serialization.Json" version="[4.3.0, )" />
-		<dependency id="Newtonsoft.Json" version="[12.0.2, )" />
+        <dependency id="System.Runtime.Serialization.Json" version="[4.3.0, )" />
+        <dependency id="Newtonsoft.Json" version="[12.0.2, )" />
       </group>
     </dependencies>
   </metadata>
