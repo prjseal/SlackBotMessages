@@ -3,17 +3,7 @@ namespace SlackBotMessages.Models
     public class SlackLink
     {
         /// <summary>
-        /// The link url
-        /// </summary>
-        private string Url { get; }
-        
-        /// <summary>
-        /// The link text
-        /// </summary>
-        private string Text { get; }
-
-        /// <summary>
-        /// Create a slack link
+        ///     Create a slack link
         /// </summary>
         /// <param name="url">The link url</param>
         /// <param name="text">The link text</param>
@@ -24,7 +14,17 @@ namespace SlackBotMessages.Models
         }
 
         /// <summary>
-        /// Override of the ToString method to render the link properly
+        ///     The link url
+        /// </summary>
+        private string Url { get; }
+
+        /// <summary>
+        ///     The link text
+        /// </summary>
+        private string Text { get; }
+
+        /// <summary>
+        ///     Override of the ToString method to render the link properly
         /// </summary>
         /// <returns>A url formatted correctly for Slack</returns>
         public override string ToString()

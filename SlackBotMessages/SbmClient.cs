@@ -10,17 +10,12 @@ namespace SlackBotMessages
     public class SbmClient
     {
         /// <summary>
-        /// The web hook url to send the message to
-        /// </summary>
-        private string WebHookUrl { get; set; }
-
-        /// <summary>
-        /// The http client used for posting the data to the slack web hook.
+        ///     The http client used for posting the data to the slack web hook.
         /// </summary>
         private static readonly HttpClient Client = new HttpClient();
-        
+
         /// <summary>
-        /// Create the Slack Bot Messages client and set the web hook url.
+        ///     Create the Slack Bot Messages client and set the web hook url.
         /// </summary>
         /// <param name="webHookUrl"></param>
         public SbmClient(string webHookUrl)
@@ -29,7 +24,12 @@ namespace SlackBotMessages
         }
 
         /// <summary>
-        /// Calls the process request method with your message data
+        ///     The web hook url to send the message to
+        /// </summary>
+        private string WebHookUrl { get; }
+
+        /// <summary>
+        ///     Calls the process request method with your message data
         /// </summary>
         /// <param name="message">The message you would like to send to slack</param>
         /// <returns>The response from the server</returns>
@@ -40,7 +40,7 @@ namespace SlackBotMessages
         }
 
         /// <summary>
-        /// The method used to send the message data to the slack web hook
+        ///     The method used to send the message data to the slack web hook
         /// </summary>
         /// <param name="webHookUrl">The web hook url to send the message to</param>
         /// <param name="requestBody">The message model in json format</param>
@@ -60,7 +60,7 @@ namespace SlackBotMessages
             }
             catch (Exception ex)
             {
-                return  "Error when posting to the web hook url. Error Message: " + ex.Message;
+                return "Error when posting to the web hook url. Error Message: " + ex.Message;
             }
         }
     }
