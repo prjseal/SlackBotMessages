@@ -24,7 +24,7 @@ namespace SlackBotMessages.Models
         /// An optional flag indicating whether the value is short enough
         /// to be displayed side-by-side with other values.
         /// </summary>
-        [JsonProperty("_short")]
+        [JsonProperty("short")]
         public bool Short { get; set; }
     }
 }

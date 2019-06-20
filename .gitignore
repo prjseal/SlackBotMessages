@@ -8,3 +8,5 @@
 /*.nupkg
 /.idea
 /SlackBotMessages.Tests/obj
+/SlackBotMessages.Tests/log.txt
+/SlackBotMessages/log.txt

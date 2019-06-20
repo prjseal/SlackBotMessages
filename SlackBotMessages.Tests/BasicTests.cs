@@ -275,7 +275,86 @@ namespace SlackBotMessages.Tests
                         .SetImage("https://thepracticaldev.s3.amazonaws.com/i/6hqmcjaxbgbon8ydw93z.png")
                 );
             var client = new SbmClient(WebHookUrl);
-            client.Send(message);
+            
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        /// <summary>
+        /// This example shows you how you can add short fields side by side
+        /// </summary>
+        [Test]
+        public void Short_Fields_Example()
+        {
+            var client = new SbmClient(WebHookUrl);
+            
+            var message = new Message();
+            message.AddAttachment(new Attachment()
+                .AddField("Lorem", "Ipsum Dolor", true)
+                .AddField("Sit", "Amet", true)
+                .AddField("Consectetur", "Adipiscing elit", true)
+                .AddField("Eiusmod", "Tempor incididunt", true)
+                .AddField("A love story", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget aliquet nibh praesent tristique. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Ultrices tincidunt arcu non sodales neque sodales. Ac auctor augue mauris augue neque gravida in fermentum et. Facilisi nullam vehicula ipsum a. Ac turpis egestas integer eget aliquet nibh praesent tristique. Vitae ultricies leo integer malesuada nunc vel risus commodo. Justo nec ultrices dui sapien eget mi proin sed. At auctor urna nunc id cursus metus aliquam eleifend. Purus sit amet luctus venenatis. Cursus in hac habitasse platea dictumst quisque. Pharetra sit amet aliquam id diam. In vitae turpis massa sed. Massa massa ultricies mi quis.", false)               
+            );
+            
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        /// <summary>
+        /// This example shows you how you can send a notification to a channel
+        /// </summary>
+        [Test]
+        public void Notification_To_Channel()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("<!channel> hey this is cool");
+            
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        /// <summary>
+        /// This example shows you how you can send a notification to a channel
+        /// </summary>
+        [Test]
+        public void Notification_To_Group()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("<!group> this is cool");
+            
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        /// <summary>
+        /// This example shows you how you can send a notification to a channel
+        /// </summary>
+        [Test]
+        public void Notification_To_Here()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("<!here> this is cool");
+            
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        /// <summary>
+        /// This example shows you how you can send a notification to a channel
+        /// </summary>
+        [Test]
+        public void Notification_To_Everyone()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("<!everyone> this is cool");
+            
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
         }
     }
 }
