@@ -30,7 +30,7 @@ Install via NuGet: ``` Install-Package SlackBotMessages ```
 
 ### Emoji Icon Example
 
-![Emoji Icon Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/alienemoji.png "Emoji Icon Example")
+![Emoji Icon Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/alienemoji.png "Emoji Icon Example")
 
 ```
 /// <summary>
@@ -55,7 +55,7 @@ public void Emoji_Icon_Example()
 
 ### Custom Icon Url Example
 
-![Custom Icon Url Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/customiconurl.png "Custom Icon Url Example")
+![Custom Icon Url Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/customiconurl.png "Custom Icon Url Example")
 
 ```
 /// <summary>
@@ -81,7 +81,7 @@ public void Custom_Icon_Url_Example()
 
 ### Multiple Attachments Example
 
-![Multiple Attachments Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/multipleattachments.png "Multiple Attachments Example")
+![Multiple Attachments Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/multipleattachments.png "Multiple Attachments Example")
 
 ```
 /// <summary>
@@ -159,7 +159,7 @@ public void Send_Rich_Message_Success()
 
 ### Pingdom Down Alert Example
 
-![Pingdom Down Alert Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/pingbot.png "Pingdom Down Alert Example")
+![Pingdom Down Alert Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/pingbot.png "Pingdom Down Alert Example")
 
 ```
 /// <summary>
@@ -293,7 +293,7 @@ public void Pingbot_Alert_Website_Up_Fluent_Example()
 
 ### Footer Example
 
-![Footer Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/footer.png "Footer Example")
+![Footer Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/footer.png "Footer Example")
 
 ```
 /// <summary>
@@ -324,7 +324,7 @@ public void Footer_Example()
 
 ### Thumbnail Example
 
-![Thumbnail Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/thumbnail.png "Thumbnail Example")
+![Thumbnail Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/thumbnail.png "Thumbnail Example")
 
 ```
 /// <summary>
@@ -354,7 +354,7 @@ public void Thumb_Example()
 
 ### Rich Card With Image Example
 
-![Rich Card With Image Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/devto.png "Rich Card With Image Example")
+![Rich Card With Image Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/devto.png "Rich Card With Image Example")
 
 ```
 /// <summary>
@@ -385,7 +385,7 @@ public void Article_Link_Example()
 
 ### Short Fields Example
 
-![Short Fields Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/shortfields.png "Short Fields Example")
+![Short Fields Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/shortfields.png "Short Fields Example")
 
 ```
 /// <summary>
@@ -413,7 +413,7 @@ public void Short_Fields_Example()
 
 ### Notification To Channel Example
 
-![Notification To Channel Example](https://github.com/prjseal/SlackBotMessages/blob/dev/v2/notifications.png "Notification To Channel Example")
+![Notification To Channel Example](https://github.com/prjseal/SlackBotMessages/blob/master/images/notifications.png "Notification To Channel Example")
 
 ```
 /// <summary>
