@@ -1,11 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackBotMessages", "SlackBotMessages\SlackBotMessages.csproj", "{B18B85D8-EBA7-4CA3-9A0A-93D181844BAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackBotMessages", "SlackBotMessages\SlackBotMessages.csproj", "{9D81703F-ED9E-4DED-962D-16449F46B3A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackBotMessages.Tests", "SlackBotMessages.Tests\SlackBotMessages.Tests.csproj", "{A50EE40B-3525-4DE5-8B33-4771A1B2292B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlackBotMessages.Tests", "SlackBotMessages.Tests\SlackBotMessages.Tests.csproj", "{DB228F61-6828-43A4-BCD3-7DE469C3FA63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,19 +10,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B18B85D8-EBA7-4CA3-9A0A-93D181844BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B18B85D8-EBA7-4CA3-9A0A-93D181844BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B18B85D8-EBA7-4CA3-9A0A-93D181844BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B18B85D8-EBA7-4CA3-9A0A-93D181844BAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A50EE40B-3525-4DE5-8B33-4771A1B2292B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A50EE40B-3525-4DE5-8B33-4771A1B2292B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A50EE40B-3525-4DE5-8B33-4771A1B2292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A50EE40B-3525-4DE5-8B33-4771A1B2292B}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {1C54C711-DA42-4615-9975-E44B1AA5DF33}
+		{9D81703F-ED9E-4DED-962D-16449F46B3A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D81703F-ED9E-4DED-962D-16449F46B3A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D81703F-ED9E-4DED-962D-16449F46B3A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D81703F-ED9E-4DED-962D-16449F46B3A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB228F61-6828-43A4-BCD3-7DE469C3FA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB228F61-6828-43A4-BCD3-7DE469C3FA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB228F61-6828-43A4-BCD3-7DE469C3FA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB228F61-6828-43A4-BCD3-7DE469C3FA63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
