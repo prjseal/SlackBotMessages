@@ -19,7 +19,7 @@ Install via NuGet: ``` Install-Package SlackBotMessages ```
 
 ## Registering for your WebHook Url with Slack
 
-[Click here to set up an incoming WebHook] (https://my.slack.com/services/new/incoming-webhook/)
+[Click here to set up an incoming WebHook](https://my.slack.com/services/new/incoming-webhook/)
 
 - Sign in to Slack
 - Choose a channel to post to
@@ -423,5 +423,4 @@ var client = new SbmClient(WebHookUrl);
 var message = new Message("<!everyone> this is cool");
 
 client.Send(message);
-```
 ```
