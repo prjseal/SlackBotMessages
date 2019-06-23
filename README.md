@@ -9,6 +9,10 @@ A .NET library to enable you to send rich formatted bot messages in slack, by po
 This library has been completely re-written giving you the ability and control to send better
 looking messages in Slack programmatically.
 
+It is Compatible with .NET Core, .NET Framework and more. See the below chart:
+
+![Compatibility Chart](https://github.com/prjseal/SlackBotMessages/blob/master/images/compatibility.png "Compatibility Chart")
+
 Have a look at the [test project](https://github.com/prjseal/SlackBotMessages/blob/master/SlackBotMessages.Tests/BasicTests.cs) to see the examples of how to use the library
 
 ## NuGet
