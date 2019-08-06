@@ -32,7 +32,7 @@ namespace SlackBotMessages
         ///     Calls the process request method with your message data
         /// </summary>
         /// <param name="message">The message you would like to send to slack</param>
-        /// <returns>The response from the server</returns>
+        /// <returns>The response body from the server</returns>
         public Task<string> Send(Message message)
         {
             var requestBody = JsonConvert.SerializeObject(message);
@@ -49,13 +49,12 @@ namespace SlackBotMessages
         {
             try
             {
-                using (var request = new HttpRequestMessage())
+                using (var request = new HttpRequestMessage(HttpMethod.Post, new Uri(webHookUrl)))
+                using (var content = new StringContent(requestBody, Encoding.UTF8, "application/json"))
                 {
-                    request.Method = HttpMethod.Post;
-                    request.RequestUri = new Uri(webHookUrl);
-                    request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                    var response = Client.SendAsync(request).Result;
-                    return await response.Content.ReadAsStringAsync();
+                    request.Content = content;
+                    using(var response = await Client.SendAsync(request).ConfigureAwait(false))
+                        return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 }
             }
             catch (Exception ex)
