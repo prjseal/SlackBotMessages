@@ -11,8 +11,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A library for sending rich formatted Slack Bot Messages. Works with .NET Core, .NET Standard and .NET Framework.</description>
     <releaseNotes>
-      - made client fully async
-      - made tests async too
+      - created SendAsync method which is fully async
+      - created BasicTestsAsync class to test new fully async
+      - left original Send method in place to avoid breaking changes
       - Send richly formatted messages with attachments
       - Works with .NET Core, .NET Standard and .NET Framework
     </releaseNotes>

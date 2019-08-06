@@ -16,6 +16,7 @@
       - Works with .NET Core, .NET Standard and .NET Framework</PackageReleaseNotes>
         <PackageLicenseUrl>https://github.com/prjseal/SlackBotMessages/blob/master/License.md</PackageLicenseUrl>
         <PackageTags>Slack,Bot,Messages,Messaging,WebRequest,WebHook,Attachments,SlackBot,SlackMessages</PackageTags>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
