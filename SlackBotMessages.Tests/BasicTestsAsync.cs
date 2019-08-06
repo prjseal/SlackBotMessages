@@ -28,7 +28,7 @@ namespace SlackBotMessages.Tests
                 IconEmoji = Emoji.Alien
             };
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -50,7 +50,7 @@ namespace SlackBotMessages.Tests
                 IconUrl = "https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2019-06-17/669285832007_48.png"
             };
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -123,7 +123,7 @@ namespace SlackBotMessages.Tests
                 }
             };
 
-            var response = await client.Send(msg).ConfigureAwait(false);
+            var response = await client.SendAsync(msg).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -159,7 +159,7 @@ namespace SlackBotMessages.Tests
                 }
             };
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -195,7 +195,7 @@ namespace SlackBotMessages.Tests
                 }
             };
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -219,7 +219,7 @@ namespace SlackBotMessages.Tests
                             "<https://google.com> • <https://my.pingbot.com/reports/responsetime#check=12345|View details>")
                 );
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -243,7 +243,7 @@ namespace SlackBotMessages.Tests
                             "<https://google.com> • <https://my.pingbot.com/reports/responsetime#check=12345|View details>")
                 );
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -269,7 +269,7 @@ namespace SlackBotMessages.Tests
                             DateTime.UtcNow)
                 );
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -294,7 +294,7 @@ namespace SlackBotMessages.Tests
                             "https://s3-us-west-2.amazonaws.com/slack-files2/bot_icons/2019-06-19/658365479699_48.png")
                 );
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -320,7 +320,7 @@ namespace SlackBotMessages.Tests
                         .SetImage("https://thepracticaldev.s3.amazonaws.com/i/6hqmcjaxbgbon8ydw93z.png")
                 );
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -343,7 +343,7 @@ namespace SlackBotMessages.Tests
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget aliquet nibh praesent tristique. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Ultrices tincidunt arcu non sodales neque sodales. Ac auctor augue mauris augue neque gravida in fermentum et. Facilisi nullam vehicula ipsum a. Ac turpis egestas integer eget aliquet nibh praesent tristique. Vitae ultricies leo integer malesuada nunc vel risus commodo. Justo nec ultrices dui sapien eget mi proin sed. At auctor urna nunc id cursus metus aliquam eleifend. Purus sit amet luctus venenatis. Cursus in hac habitasse platea dictumst quisque. Pharetra sit amet aliquam id diam. In vitae turpis massa sed. Massa massa ultricies mi quis.")
             );
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -358,7 +358,7 @@ namespace SlackBotMessages.Tests
 
             var message = new Message("<!channel> hey this is cool");
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -373,7 +373,7 @@ namespace SlackBotMessages.Tests
 
             var message = new Message("<!group> this is cool");
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -388,7 +388,7 @@ namespace SlackBotMessages.Tests
 
             var message = new Message("<!here> this is cool");
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
 
@@ -403,7 +403,7 @@ namespace SlackBotMessages.Tests
 
             var message = new Message("<!everyone> this is cool");
 
-            var response = await client.Send(message).ConfigureAwait(false);
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
     }

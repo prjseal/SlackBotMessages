@@ -51,6 +51,8 @@ var message = new Message
 };
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Custom Icon Url Example
@@ -73,6 +75,8 @@ var message = new Message
 };
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Multiple Attachments Example
@@ -147,6 +151,8 @@ var msg = new Message
 };
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Pingdom Down Alert Example
@@ -184,6 +190,8 @@ var message = new Message
 };
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Pingdom Up Alert Example
@@ -219,6 +227,8 @@ var message = new Message
 };
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Pingdom Down Alert Example - Fluent Methods
@@ -242,6 +252,8 @@ var message = new Message().SetUserWithIconUrl("Pingbot",
     );
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Pingdom Up Alert Example - Fluent Methods
@@ -265,6 +277,8 @@ var message = new Message().SetUserWithIconUrl("Pingbot",
     );
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Footer Example
@@ -292,6 +306,8 @@ var message = new Message()
     );
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Thumbnail Example
@@ -318,6 +334,8 @@ var message = new Message()
     );
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Rich Card With Image Example
@@ -345,6 +363,8 @@ var message = new Message("https://dev.to/")
     );
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Short Fields Example
@@ -369,6 +389,8 @@ message.AddAttachment(new Attachment()
 );
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Notification To Channel Example
@@ -385,6 +407,8 @@ var client = new SbmClient(WebHookUrl);
 var message = new Message("<!channel> hey this is cool");
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Notification To Group Example
@@ -399,6 +423,8 @@ var client = new SbmClient(WebHookUrl);
 var message = new Message("<!group> this is cool");
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Notification To Here Example
@@ -413,6 +439,8 @@ var client = new SbmClient(WebHookUrl);
 var message = new Message("<!here> this is cool");
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
 
 ### Notification To Everyone Example
@@ -427,4 +455,6 @@ var client = new SbmClient(WebHookUrl);
 var message = new Message("<!everyone> this is cool");
 
 client.Send(message);
+//or send it fully async like this:
+//await client.SendAsync(message).ConfigureAwait(false);
 ```
