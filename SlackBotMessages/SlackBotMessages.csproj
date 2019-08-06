@@ -2,6 +2,20 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard1.2</TargetFramework>
+        <Version>2.0.1</Version>
+        <Description>A library for sending rich formatted Slack Bot Messages. Works with .NET Core, .NET Standard and .NET Framework.</Description>
+        <Authors>Paul Seal</Authors>
+        <Copyright>Copyright 2019</Copyright>
+        <PackageProjectUrl>https://github.com/prjseal/SlackBotMessages/</PackageProjectUrl>
+        <PackageIconUrl>https://github.com/prjseal/SlackBotMessages/blob/master/sbmlogo.jpg?raw=true</PackageIconUrl>
+        <RepositoryUrl>https://github.com/prjseal/SlackBotMessages/</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageReleaseNotes>- made client fully async
+      - made tests async too
+      - Send richly formatted messages with attachments
+      - Works with .NET Core, .NET Standard and .NET Framework</PackageReleaseNotes>
+        <PackageLicenseUrl>https://github.com/prjseal/SlackBotMessages/blob/master/License.md</PackageLicenseUrl>
+        <PackageTags>Slack,Bot,Messages,Messaging,WebRequest,WebHook,Attachments,SlackBot,SlackMessages</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
