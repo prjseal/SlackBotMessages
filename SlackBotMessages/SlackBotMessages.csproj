@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <Version>2.0.2</Version>
@@ -12,12 +12,14 @@
         <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/prjseal/SlackBotMessages/</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageReleaseNotes>- Added ability to set Response Type. Helpful for Slash Commands.
-- created SendAsync method which is fully async
-- created BasicTestsAsync class to test new fully async
-- left original Send method in place to avoid breaking changes
-- Send richly formatted messages with attachments
-- Works with .NET Core, .NET Standard and .NET Framework</PackageReleaseNotes>
+        <PackageReleaseNotes>
+            - Added ability to set Response Type. Helpful for Slash Commands.
+            - created SendAsync method which is fully async
+            - created BasicTestsAsync class to test new fully async
+            - left original Send method in place to avoid breaking changes
+            - Send richly formatted messages with attachments
+            - Works with .NET Core, .NET Standard and .NET Framework
+        </PackageReleaseNotes>
         <PackageLicenseUrl></PackageLicenseUrl>
         <PackageTags>Slack,Bot,Messages,Messaging,WebRequest,WebHook,Attachments,SlackBot,SlackMessages,SlashCommands</PackageTags>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -30,20 +32,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-      <PackageReference Include="NuGet.Build" Version="2.12.1" />
-      <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+        <PackageReference Include="NuGet.Build" Version="2.12.1" />
+        <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="..\License.md">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-      <None Include="..\sbmlogo.jpg">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
+        <None Include="..\License.md">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+        <None Include="..\sbmlogo.jpg">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
     </ItemGroup>
 
 </Project>
