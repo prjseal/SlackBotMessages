@@ -390,5 +390,29 @@ namespace SlackBotMessages.Tests
             var response = client.Send(message);
             Assert.AreEqual("ok", response.Result);
         }
+
+        [Test]
+        public void Message_To_Channel()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("Message to channel");
+            message.SetResponseType(ResponseType.InChannel);
+
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        [Test]
+        public void Message_To_User()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("Message to user");
+            message.SetResponseType(ResponseType.Ephemeral);
+
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
     }
 }

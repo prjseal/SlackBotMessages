@@ -10,7 +10,7 @@ namespace SlackBotMessages.Tests
     public class BasicAsyncTests
     {
         private static string WebHookUrl =>
-            "https://hooks.slack.com/services/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";
+            "https://hooks.slack.com/services/Your/WebHook/Url";
 
         /// <summary>
         ///     A simple example of a message which looks like it has been send by an alien
@@ -402,6 +402,30 @@ namespace SlackBotMessages.Tests
             var client = new SbmClient(WebHookUrl);
 
             var message = new Message("<!everyone> this is cool");
+
+            var response = await client.SendAsync(message).ConfigureAwait(false);
+            Assert.AreEqual("ok", response);
+        }
+
+        [Test]
+        public async Task Message_To_Channel()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("Message to channel");
+            message.SetResponseType(ResponseType.InChannel);
+
+            var response = await client.SendAsync(message).ConfigureAwait(false);
+            Assert.AreEqual("ok", response);
+        }
+
+        [Test]
+        public async Task Message_To_User()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("Message to user");
+            message.SetResponseType(ResponseType.Ephemeral);
 
             var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);

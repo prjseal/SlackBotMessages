@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Version>2.02</Version>
+        <Version>2.0.2</Version>
         <PackageVersion>2.0.2</PackageVersion>
         <Description>A library for sending rich formatted Slack Bot Messages. Works with .NET Core, .NET Standard and .NET Framework.</Description>
         <Authors>Paul Seal, ajtatum</Authors>
