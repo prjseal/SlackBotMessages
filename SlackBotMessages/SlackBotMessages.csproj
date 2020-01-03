@@ -1,28 +1,49 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard1.2</TargetFramework>
-        <Version>2.0.1</Version>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Version>2.02</Version>
+        <PackageVersion>2.0.2</PackageVersion>
         <Description>A library for sending rich formatted Slack Bot Messages. Works with .NET Core, .NET Standard and .NET Framework.</Description>
-        <Authors>Paul Seal</Authors>
-        <Copyright>Copyright 2019</Copyright>
+        <Authors>Paul Seal, ajtatum</Authors>
+        <Owners>Paul Seal</Owners>
+        <Copyright>Copyright 2020</Copyright>
         <PackageProjectUrl>https://github.com/prjseal/SlackBotMessages/</PackageProjectUrl>
-        <PackageIconUrl>https://github.com/prjseal/SlackBotMessages/blob/master/sbmlogo.jpg?raw=true</PackageIconUrl>
+        <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/prjseal/SlackBotMessages/</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageReleaseNotes>- made client fully async
-      - made tests async too
-      - Send richly formatted messages with attachments
-      - Works with .NET Core, .NET Standard and .NET Framework</PackageReleaseNotes>
-        <PackageLicenseUrl>https://github.com/prjseal/SlackBotMessages/blob/master/License.md</PackageLicenseUrl>
-        <PackageTags>Slack,Bot,Messages,Messaging,WebRequest,WebHook,Attachments,SlackBot,SlackMessages</PackageTags>
+        <PackageReleaseNotes>- Added ability to set Response Type. Helpful for Slash Commands.
+- created SendAsync method which is fully async
+- created BasicTestsAsync class to test new fully async
+- left original Send method in place to avoid breaking changes
+- Send richly formatted messages with attachments
+- Works with .NET Core, .NET Standard and .NET Framework</PackageReleaseNotes>
+        <PackageLicenseUrl></PackageLicenseUrl>
+        <PackageTags>Slack,Bot,Messages,Messaging,WebRequest,WebHook,Attachments,SlackBot,SlackMessages,SlashCommands</PackageTags>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <AssemblyVersion>2.0.2.0</AssemblyVersion>
+        <FileVersion>2.0.2.0</FileVersion>
+        <PackageLicenseExpression></PackageLicenseExpression>
+        <Company>Paul Seal</Company>
+        <PackageIcon>sbmlogo.jpg</PackageIcon>
+        <PackageLicenseFile>License.md</PackageLicenseFile>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
       <PackageReference Include="NuGet.Build" Version="2.12.1" />
       <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="..\License.md">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+      <None Include="..\sbmlogo.jpg">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>
