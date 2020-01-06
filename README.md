@@ -2,6 +2,7 @@
 
 # SlackBotMessages
 
+![Nuget](https://img.shields.io/nuget/v/SlackBotMessages)
 [![Nuget Downloads](https://img.shields.io/nuget/dt/SlackBotMessages.svg)](https://www.nuget.org/packages/SlackBotMessages)
 
 A .NET library to enable you to send rich formatted bot messages in slack, by posting messages to Slack's incoming WebHook Urls
