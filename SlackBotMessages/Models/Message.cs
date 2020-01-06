@@ -78,7 +78,7 @@ namespace SlackBotMessages.Models
         [JsonProperty("response_type")]
         private string ResponseType
         {
-            get => string.IsNullOrEmpty(_responseType) ? "in_channel" : _responseType;
+            get => string.IsNullOrEmpty(_responseType) ? "ephemeral" : _responseType;
             set => _responseType = value;
         }
 
