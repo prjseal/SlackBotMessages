@@ -10,8 +10,9 @@
         <PackageIconUrl>https://github.com/prjseal/SlackBotMessages/blob/master/sbmlogo.jpg?raw=true</PackageIconUrl>
         <RepositoryUrl>https://github.com/prjseal/SlackBotMessages/</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageReleaseNotes>- made client fully async
-      - made tests async too
+        <PackageReleaseNotes>- created SendAsync method which is fully async
+      - created BasicTestsAsync class to test new fully async
+      - left original Send method in place to avoid breaking changes
       - Send richly formatted messages with attachments
       - Works with .NET Core, .NET Standard and .NET Framework</PackageReleaseNotes>
         <PackageLicenseUrl>https://github.com/prjseal/SlackBotMessages/blob/master/License.md</PackageLicenseUrl>
