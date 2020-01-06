@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace SlackBotMessages.Enums
+﻿namespace SlackBotMessages.Enums
 {
     public enum ResponseType
     {
