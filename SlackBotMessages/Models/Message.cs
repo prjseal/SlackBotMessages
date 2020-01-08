@@ -1,10 +1,13 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using SlackBotMessages.Enums;
 
 namespace SlackBotMessages.Models
 {
     public class Message
     {
+        private string _responseType;
+
         /// <summary>
         ///     Create a message
         /// </summary>
@@ -72,6 +75,13 @@ namespace SlackBotMessages.Models
         [JsonProperty("attachments")]
         public List<Attachment> Attachments { get; set; }
 
+        [JsonProperty("response_type")]
+        private string ResponseType
+        {
+            get => string.IsNullOrEmpty(_responseType) ? "ephemeral" : _responseType;
+            set => _responseType = value;
+        }
+
         /// <summary>
         ///     Add an attachment to the message
         /// </summary>
@@ -119,6 +129,17 @@ namespace SlackBotMessages.Models
         public Message SetChannel(string channel)
         {
             Channel = channel;
+            return this;
+        }
+
+        /// <summary>
+        ///     Sets the response type to either reply to the entire channel or to just the user. Helpful for Slash Commands. Default is InChannel.
+        /// </summary>
+        /// <param name="responseType">How you want the response to be displayed.</param>
+        /// <returns></returns>
+        public Message SetResponseType(ResponseType responseType)
+        {
+            ResponseType = responseType.ToString();
             return this;
         }
     }

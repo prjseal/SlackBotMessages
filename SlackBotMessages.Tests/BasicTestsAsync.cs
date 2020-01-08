@@ -406,5 +406,37 @@ namespace SlackBotMessages.Tests
             var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
+
+        /// <summary>
+        ///     This example shows you how you can send response via in_channel
+        ///     using the SendAsync method
+        /// </summary>
+        [Test]
+        public async Task Response_In_Channel_Async()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("This is an in_channel response type.");
+
+            message.SetResponseType(ResponseType.in_channel);
+            var response = await client.SendAsync(message);
+            Assert.AreEqual("ok", response);
+        }
+
+        /// <summary>
+        ///     This example shows you how you can send response via ephemeral
+        ///     using the SendAsync method
+        /// </summary>
+        [Test]
+        public async Task Response_In_Ephemeral_Async()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("This is an ephemeral response type.");
+
+            message.SetResponseType(ResponseType.ephemeral);
+            var response = await client.SendAsync(message);
+            Assert.AreEqual("ok", response);
+        }
     }
 }

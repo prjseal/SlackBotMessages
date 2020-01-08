@@ -390,5 +390,35 @@ namespace SlackBotMessages.Tests
             var response = client.Send(message);
             Assert.AreEqual("ok", response.Result);
         }
+
+        /// <summary>
+        ///     This example shows you how you can send response via in_channel
+        /// </summary>
+        [Test]
+        public void Response_In_Channel()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("This is an in_channel response type.");
+
+            message.SetResponseType(ResponseType.in_channel);
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+
+        /// <summary>
+        ///     This example shows you how you can send response via ephemeral
+        /// </summary>
+        [Test]
+        public void Response_In_Ephemeral()
+        {
+            var client = new SbmClient(WebHookUrl);
+
+            var message = new Message("This is an ephemeral response type.");
+
+            message.SetResponseType(ResponseType.ephemeral);
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
     }
 }
