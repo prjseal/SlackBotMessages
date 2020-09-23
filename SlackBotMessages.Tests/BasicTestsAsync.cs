@@ -3,6 +3,7 @@ using SlackBotMessages.Enums;
 using SlackBotMessages.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace SlackBotMessages.Tests
@@ -10,7 +11,7 @@ namespace SlackBotMessages.Tests
     public class BasicAsyncTests
     {
         private static string WebHookUrl =>
-            "https://hooks.slack.com/services/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";
+            "https://hooks.slack.com/services/Your/WebHook/Url";
 
         /// <summary>
         ///     A simple example of a message which looks like it has been send by an alien
@@ -436,6 +437,27 @@ namespace SlackBotMessages.Tests
 
             message.SetResponseType(ResponseType.ephemeral);
             var response = await client.SendAsync(message);
+            Assert.AreEqual("ok", response);
+        }
+        
+        /// <summary>
+        ///     A simple example of a message which looks like it has been send by an alien using an injected HttpClient
+        ///     
+        /// </summary>
+        [Test]
+        public async Task AsyncSendWithNewConstructor()
+        {
+            var httpClient = new HttpClient();
+            ISbmClient client = new SbmClient(httpClient, WebHookUrl);
+
+            var message = new Message
+            {
+                Username = "Alien",
+                Text = "Hello from an Alien",
+                IconEmoji = Emoji.Alien
+            };
+
+            var response = await client.SendAsync(message).ConfigureAwait(false);
             Assert.AreEqual("ok", response);
         }
     }

@@ -3,6 +3,7 @@ using SlackBotMessages.Enums;
 using SlackBotMessages.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 
 namespace SlackBotMessages.Tests
 {
@@ -417,6 +418,26 @@ namespace SlackBotMessages.Tests
             var message = new Message("This is an ephemeral response type.");
 
             message.SetResponseType(ResponseType.ephemeral);
+            var response = client.Send(message);
+            Assert.AreEqual("ok", response.Result);
+        }
+        
+        /// <summary>
+        ///     A simple example of a ISbmClient sending a new message with an injected HttpClient
+        /// </summary>
+        [Test]
+        public void NewConstructorUsingInjectedHttpClient()
+        {
+            var httpClient = new HttpClient();
+            ISbmClient client = new SbmClient(httpClient, WebHookUrl);
+
+            var message = new Message
+            {
+                Username = "Alien",
+                Text = "Hello from an Alien",
+                IconEmoji = Emoji.Alien
+            };
+
             var response = client.Send(message);
             Assert.AreEqual("ok", response.Result);
         }

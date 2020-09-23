@@ -7,12 +7,12 @@ using SlackBotMessages.Models;
 
 namespace SlackBotMessages
 {
-    public class SbmClient
+    public class SbmClient : ISbmClient
     {
         /// <summary>
         ///     The http client used for posting the data to the slack web hook.
         /// </summary>
-        private static readonly HttpClient Client = new HttpClient();
+        private readonly HttpClient _client;
 
         /// <summary>
         ///     Create the Slack Bot Messages client and set the web hook url.
@@ -20,6 +20,13 @@ namespace SlackBotMessages
         /// <param name="webHookUrl"></param>
         public SbmClient(string webHookUrl)
         {
+            _client = new HttpClient();
+            WebHookUrl = webHookUrl;
+        }
+        
+        public SbmClient(HttpClient client, string webHookUrl)
+        {
+            _client = client;
             WebHookUrl = webHookUrl;
         }
 
@@ -56,7 +63,7 @@ namespace SlackBotMessages
         /// <param name="webHookUrl">The web hook url to send the message to</param>
         /// <param name="requestBody">The message model in json format</param>
         /// <returns></returns>
-        private static async Task<string> ProcessRequest(string webHookUrl, string requestBody)
+        private async Task<string> ProcessRequest(string webHookUrl, string requestBody)
         {
             try
             {
@@ -65,7 +72,7 @@ namespace SlackBotMessages
                     request.Method = HttpMethod.Post;
                     request.RequestUri = new Uri(webHookUrl);
                     request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                    var response = Client.SendAsync(request).Result;
+                    var response = _client.SendAsync(request).Result;
                     return await response.Content.ReadAsStringAsync();
                 }
             }
@@ -81,7 +88,7 @@ namespace SlackBotMessages
         /// <param name="webHookUrl">The web hook url to send the message to</param>
         /// <param name="requestBody">The message model in json format</param>
         /// <returns></returns>
-        private static async Task<string> ProcessRequestAsync(string webHookUrl, string requestBody)
+        private async Task<string> ProcessRequestAsync(string webHookUrl, string requestBody)
         {
             try
             {
@@ -89,7 +96,7 @@ namespace SlackBotMessages
                 using (var content = new StringContent(requestBody, Encoding.UTF8, "application/json"))
                 {
                     request.Content = content;
-                    using (var response = await Client.SendAsync(request).ConfigureAwait(false))
+                    using (var response = await _client.SendAsync(request).ConfigureAwait(false))
                         return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
                 }
             }
